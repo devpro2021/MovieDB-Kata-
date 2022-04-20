@@ -10,5 +10,4 @@ function CardList({ data }) {
   });
   return <div className="card-list">{listItems}</div>;
 }
-
 export default CardList;
