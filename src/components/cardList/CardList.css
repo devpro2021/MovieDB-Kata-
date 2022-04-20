@@ -4,3 +4,9 @@
 	grid-gap: 36px;
 	margin: 0 auto;
 }
+
+.ant-spin-spinning {
+    position: absolute;
+    left: 0;
+    right: 0;
+}

@@ -8,7 +8,7 @@ export default class MovieDbService {
       if (!res.ok) {
         throw new Error(`${res.status}`);
       }
-      return res;
+      return res.json();
     } catch (error) {
       // eslint-disable-next-line no-console
       console.error('Возникла ошибка с fetch запросом', error);
