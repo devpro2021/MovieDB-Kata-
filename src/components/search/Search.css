@@ -1,0 +1,13 @@
+/* background: #FFFFFF;
+/* @border-color-base */
+
+/* border: 1px solid #D9D9D9;
+box-sizing: border-box;
+border-radius: 4px; */ 
+
+.search{
+	border: 1px solid #D9D9D9;
+	border-radius: 4px;
+	margin-bottom: 34px;
+	height: 40px;
+}

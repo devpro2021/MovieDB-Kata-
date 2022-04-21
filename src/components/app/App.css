@@ -7,3 +7,36 @@
 .ant-row:not(:last-child){
 	margin-bottom: 36px;
 }
+
+.ant-spin-spinning {
+    position: absolute;
+    left: 0;
+    right: 0;
+		top: 100px;
+}
+
+.ant-pagination{
+	display: flex;
+	justify-content: center;
+	margin-top: 38px;
+	
+}
+
+.ant-pagination-item, 
+.ant-pagination-prev .ant-pagination-item-link,
+.ant-pagination-next .ant-pagination-item-link{
+	border: none
+}
+
+.ant-pagination-item-active{
+	background: #1890FF;
+	border-radius: 4px;
+}
+.ant-pagination-item-active a{
+color: #FFFFFF;
+}
+
+.ant-empty-description{
+	font-size: 24px;
+	font-weight: bold;
+}

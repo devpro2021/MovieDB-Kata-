@@ -1,13 +1,11 @@
 import React from 'react';
 import { Card, Tag } from 'antd';
-import { format } from 'date-fns';
 
 import 'antd/dist/antd.css';
 import './MovieCard.css';
 
 const MovieCard = ({ data }) => {
-  const posterURL = 'https://image.tmdb.org/t/p/w500/';
-  const { title, poster_path: poster, overview, release_date } = data;
+  const { title, poster, overview, release_date } = data;
   const shortDescr = (str, length) => {
     if (str.length < length) {
       return str;
@@ -22,11 +20,11 @@ const MovieCard = ({ data }) => {
   return (
     <Card className="card">
       <div className="card__img">
-        <img src={posterURL + poster} alt="" />
+        <img src={poster} alt="" />
       </div>
       <div className="card__info info-card">
         <h2 className="card__title">{title}</h2>
-        <span className="card__date"> {format(new Date(release_date), 'MMMM d, yyyy')} </span>
+        <span className="card__date"> {release_date} </span>
         <div className="card__genres genres">
           <Tag className="genres__item">Action</Tag>
           <Tag className="genres__item">Drama</Tag>

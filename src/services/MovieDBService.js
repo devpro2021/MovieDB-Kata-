@@ -16,7 +16,7 @@ export default class MovieDbService {
     }
   };
 
-  getMovies = async (searchQuery, page) => {
+  getMovies = async (searchQuery = 'return', page = 1) => {
     const url = `${this.baseUrl}search/movie?api_key=${this.apiKey}&language=en-US&query=${searchQuery}&page=${page}&include_adult=false`;
     const res = await this.getDatafromServer(url);
     return res;
