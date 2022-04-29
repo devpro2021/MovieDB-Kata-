@@ -40,3 +40,12 @@ color: #FFFFFF;
 	font-size: 24px;
 	font-weight: bold;
 }
+
+.ant-tabs-nav{
+	width: 130px;
+	margin: 0 auto 16px;
+}
+
+.ant-tabs-nav-wrap{
+	justify-content: start;
+}
