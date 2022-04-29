@@ -159,7 +159,7 @@ export default class App extends Component {
       ) : null;
     return (
       <GenresProvider value={genres}>
-        <Offline>
+        <Offline polling={{ enabled: false }}>
           <Alert
             message="Error"
             description="you do not have an internet connection. Please connect to Internet"
@@ -167,7 +167,7 @@ export default class App extends Component {
             showIcon
           />
         </Offline>
-        <Online>
+        <Online polling={{ enabled: false }}>
           <div className="container">
             <Tabs defaultActiveKey="1" onChange={this.changeTab}>
               <TabPane tab="Search" key="1">
