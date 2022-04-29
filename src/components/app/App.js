@@ -1,5 +1,5 @@
 /* eslint-disable import/order */
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { Offline, Online } from 'react-detect-offline';
 
 import { GenresProvider } from '../GenresContext';
@@ -12,9 +12,8 @@ import 'antd/dist/antd.css';
 import { format, parseISO } from 'date-fns';
 import './App.css';
 
-import noPoster from './noPoster.jpg';
 const { TabPane } = Tabs;
-export default class App extends Component {
+export default class App extends PureComponent {
   state = {
     movies: [],
     genres: [],
@@ -97,7 +96,7 @@ export default class App extends Component {
   };
   createMovie = (movie) => {
     const title = movie.title || 'No movie title';
-    const poster_path = movie.poster_path ? movie.poster_path : `${noPoster}`;
+    const poster_path = movie.poster_path;
     const overview = movie.overview || 'Description not found';
     const release_date = movie.release_date ? format(parseISO(movie.release_date), 'MMMM dd, yyyy') : 'no release date';
     const genre_ids = movie.genre_ids || '';

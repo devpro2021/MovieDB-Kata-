@@ -3,8 +3,10 @@ import { Card, Tag, Rate } from 'antd';
 
 import movieDbService from '../../services/MovieDBService';
 import { GenresConsumer } from '../GenresContext';
+
 import 'antd/dist/antd.css';
 import './MovieCard.css';
+import noPoster from './noPoster.jpg';
 
 const MovieCard = ({ data, rateList, createRatedList }) => {
   const { id, title, poster_path, overview, release_date, genre_ids, vote_average, rating } = data;
@@ -73,7 +75,7 @@ const MovieCard = ({ data, rateList, createRatedList }) => {
         return (
           <Card className="card">
             <div className="card__img">
-              <img src={`https://image.tmdb.org/t/p/w500/${poster_path}`} alt="" />
+              <img src={poster_path ? `https://image.tmdb.org/t/p/w500/${poster_path}` : noPoster} alt="" />
             </div>
             <div className="card__info info-card">
               <div style={changeRatingColor(vote_average)} className="card-info__rating">

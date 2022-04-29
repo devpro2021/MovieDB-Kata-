@@ -4,6 +4,14 @@ import { Input } from 'antd';
 import './Search.css';
 
 export default class Search extends Component {
+  constructor(props) {
+    super(props);
+    this.inputRef = React.createRef();
+  }
+
+  componentDidMount() {
+    this.inputRef.current.focus();
+  }
   onSearch = (event) => {
     const { onSearchChange } = this.props;
     const trimUserRequest = event.target.value.replace(/ +/g, ' ').trim();
@@ -14,7 +22,13 @@ export default class Search extends Component {
 
   render() {
     return (
-      <Input className="search" placeholder="Type to search..." type="text" onChange={debounce(this.onSearch, 1000)} />
+      <Input
+        className="search"
+        ref={this.inputRef}
+        placeholder="Type to search..."
+        type="text"
+        onChange={debounce(this.onSearch, 1000)}
+      />
     );
   }
 }
