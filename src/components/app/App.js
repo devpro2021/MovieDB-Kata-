@@ -158,7 +158,7 @@ export default class App extends Component {
         />
       ) : null;
     return (
-      <>
+      <GenresProvider value={genres}>
         <Offline>
           <Alert
             message="Error"
@@ -168,24 +168,22 @@ export default class App extends Component {
           />
         </Offline>
         <Online>
-          <GenresProvider value={genres}>
-            <div className="container">
-              <Tabs defaultActiveKey="1" onChange={this.changeTab}>
-                <TabPane tab="Search" key="1">
-                  <Search searchQuery={searchQuery} onSearchChange={this.onSearchChange} />
-                  {preloader}
-                  {error}
-                  {filmFound}
-                  {pagination}
-                </TabPane>
-                <TabPane tab="Rated" key="2">
-                  <RatedList data={rateList} />
-                </TabPane>
-              </Tabs>
-            </div>
-          </GenresProvider>
+          <div className="container">
+            <Tabs defaultActiveKey="1" onChange={this.changeTab}>
+              <TabPane tab="Search" key="1">
+                <Search searchQuery={searchQuery} onSearchChange={this.onSearchChange} />
+                {preloader}
+                {error}
+                {filmFound}
+                {pagination}
+              </TabPane>
+              <TabPane tab="Rated" key="2">
+                <RatedList data={rateList} />
+              </TabPane>
+            </Tabs>
+          </div>
         </Online>
-      </>
+      </GenresProvider>
     );
   }
 }
